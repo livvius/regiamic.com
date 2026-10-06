@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regia Mic · Privacy</title>
+<meta name="description" content="How the Regia Mic phone app handles your voice and data.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --text: #1b1f24; --muted: #57606a; --bg: #ffffff; --rule: #d8dee4; --accent: #1f6feb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #e6edf3; --muted: #9198a1; --bg: #0d1117; --rule: #30363d; --accent: #4c8dff; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 2rem 16px 4rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2.2rem 0 .5rem; }
+  .muted { color: var(--muted); }
+  nav a, a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 3.5rem 0; }
+  li { margin: .3rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<section id="en" lang="en">
+<h1>Regia Mic: privacy</h1>
+<p class="muted"><a href="/">regiamic.com</a> · Last updated 6 October 2026 · <a href="#it">Italiano</a></p>
+
+<p>Regia Mic turns a phone into a microphone for a Windows PC running Regia Mic on the same
+network. This page says what the phone app does with your voice and your data.</p>
+
+<p><strong>In short:</strong> your voice goes straight from your phone to the PC you choose, over
+your local network, and to no server. There is no account, no advertising and no tracking. We,
+the developers, never receive your voice or any data about you.</p>
+
+<h2>What the app sends to the PC</h2>
+<p>Only while you are on a channel, and only to that channel's PC:</p>
+<ul>
+  <li><strong>Your voice</strong>, live, while your microphone is on. The app does not record it.
+    The PC plays it into a microphone that its programs (Zoom, Teams, OBS and others) can use;
+    what they do with it is under their own terms and the PC operator's control.</li>
+  <li><strong>The name you choose</strong> in the settings (until you choose one, your phone's
+    model name). The PC shows it to its operator and to the other phones on the channel.</li>
+  <li><strong>A random number</strong> made when the app is installed, so that the PC recognises
+    your phone after pairing.</li>
+  <li><strong>How the connection is doing</strong>, so the operator can see why a voice breaks
+    up: the Wi‑Fi signal strength, band, channel and speed, how often the phone moves to another
+    access point, packet loss and delay, and whether the screen is off or battery saver is on.</li>
+</ul>
+<p>The PC also sees your phone's address on the network, as any device you connect to does.</p>
+
+<h2>What the app does not collect</h2>
+<p>Your location, contacts, files, photos, the name of your Wi‑Fi network, or how you use the app.
+The app contains no analytics, crash reporting or advertising code.</p>
+
+<h2>Encryption</h2>
+<p>The first time you join a PC, you pair with a code it shows. From then on everything between
+your phone and that PC is encrypted (X25519 key exchange, XChaCha20‑Poly1305), with keys only
+your phone and the PC hold. A PC's operator can switch pairing off for a channel; your voice to that
+PC then travels unencrypted on the local network.</p>
+
+<h2>Scanning the pairing code</h2>
+<p>If you scan the QR code instead of typing the code, the scanning is done by Google Play
+services, without the app getting access to your camera. Google may collect diagnostic data
+about the scan, as described in Google's
+<a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit data disclosure</a>
+and <a href="https://policies.google.com/privacy">privacy policy</a>. Typing the code avoids it.</p>
+
+<h2>What stays on your phone</h2>
+<p>Your settings, your name, the last address you typed and the pairing keys, which are sealed
+with a key in Android's secure storage. They are not backed up to the cloud. Uninstalling the
+app deletes them.</p>
+
+<h2>On the PC</h2>
+<p>The PC is run by whoever set up the channel, for example your organisation or event, not by
+us. It keeps your phone's name, its number and the pairing key so you need not pair again, and a
+log of connection quality that starts over each time Regia Mic starts. It does not save your
+voice. The PC's operator can remove your phone from its paired phones.</p>
+
+<h2>Children</h2>
+<p>The app is not directed at children.</p>
+
+<h2>Your rights and contact</h2>
+<p>Since we hold no data about you, there is nothing for us to give you or delete; your data on a
+PC is with its operator. For questions about this policy, write to Liviu Stoica,
+<a href="mailto:support@regiamic.com">support@regiamic.com</a>. If this policy changes, the new version appears
+on this page with a new date.</p>
+</section>
+
+<hr>
+
+<section id="it" lang="it">
+<h1>Regia Mic: privacy</h1>
+<p class="muted"><a href="/">regiamic.com</a> · Ultimo aggiornamento 6 ottobre 2026 · <a href="#en">English</a></p>
+
+<p>Regia Mic trasforma un telefono in un microfono per un PC Windows su cui gira Regia Mic, nella
+stessa rete. Questa pagina spiega cosa fa l'app del telefono con la tua voce e i tuoi dati.</p>
+
+<p><strong>In breve:</strong> la tua voce va direttamente dal telefono al PC che scegli,
+attraverso la rete locale, e a nessun server. Nessun account, nessuna pubblicità, nessun
+tracciamento. Noi sviluppatori non riceviamo mai la tua voce né alcun dato su di te.</p>
+
+<h2>Cosa l'app invia al PC</h2>
+<p>Solo mentre sei su un canale, e solo al PC di quel canale:</p>
+<ul>
+  <li><strong>La tua voce</strong>, in diretta, mentre il microfono è attivo. L'app non la
+    registra. Il PC la riproduce su un microfono che i suoi programmi (Zoom, Teams, OBS e altri)
+    possono usare; cosa ne fanno dipende dalle loro condizioni e da chi gestisce il PC.</li>
+  <li><strong>Il nome che scegli</strong> nelle impostazioni (finché non ne scegli uno, il modello
+    del telefono). Il PC lo mostra a chi lo gestisce e agli altri telefoni sul canale.</li>
+  <li><strong>Un numero casuale</strong> creato all'installazione, con cui il PC riconosce il
+    telefono dopo l'abbinamento.</li>
+  <li><strong>Lo stato della connessione</strong>, perché la regia veda perché una voce si
+    interrompe: intensità, banda, canale e velocità della Wi‑Fi, quante volte il telefono passa a
+    un altro access point, pacchetti persi e ritardo, e se lo schermo è spento o il risparmio
+    energetico è attivo.</li>
+</ul>
+<p>Il PC vede anche l'indirizzo del telefono nella rete, come ogni dispositivo a cui ti colleghi.</p>
+
+<h2>Cosa l'app non raccoglie</h2>
+<p>La tua posizione, i contatti, i file, le foto, il nome della rete Wi‑Fi, o come usi l'app.
+L'app non contiene codice di statistiche, segnalazione di arresti anomali o pubblicità.</p>
+
+<h2>Cifratura</h2>
+<p>La prima volta che entri su un PC, abbini il telefono con un codice che il PC mostra. Da allora
+tutto ciò che passa tra il telefono e quel PC è cifrato (scambio di chiavi X25519,
+XChaCha20‑Poly1305), con chiavi che hanno solo il telefono e il PC. Chi gestisce un PC può
+disattivare l'abbinamento per un canale; la voce verso quel PC viaggia allora non cifrata nella rete
+locale.</p>
+
+<h2>La scansione del codice di abbinamento</h2>
+<p>Se inquadri il codice QR invece di digitare il codice, la scansione la fanno i servizi Google
+Play, senza che l'app abbia accesso alla fotocamera. Google può raccogliere dati diagnostici sulla
+scansione, come descritto nell'<a href="https://developers.google.com/ml-kit/android-data-disclosure">informativa
+sui dati di ML Kit</a> e nelle <a href="https://policies.google.com/privacy?hl=it">norme sulla
+privacy</a> di Google. Digitando il codice lo eviti.</p>
+
+<h2>Cosa resta sul telefono</h2>
+<p>Le impostazioni, il tuo nome, l'ultimo indirizzo digitato e le chiavi di abbinamento, protette
+con una chiave nell'archivio sicuro di Android. Non vengono salvate nel cloud. Disinstallare l'app
+le cancella.</p>
+
+<h2>Sul PC</h2>
+<p>Il PC è gestito da chi ha creato il canale, per esempio la tua organizzazione o l'evento, non da
+noi. Conserva il nome del telefono, il suo numero e la chiave di abbinamento, così non devi
+abbinarlo di nuovo, e un registro della qualità della connessione che riparte a ogni avvio di
+Regia Mic. Non salva la tua voce. Chi gestisce il PC può togliere il telefono da quelli abbinati.</p>
+
+<h2>Minori</h2>
+<p>L'app non è rivolta ai minori.</p>
+
+<h2>I tuoi diritti e contatti</h2>
+<p>Poiché non conserviamo dati su di te, non c'è nulla da consegnarti o cancellare; i tuoi dati su
+un PC sono presso chi lo gestisce. Per domande su questa informativa scrivi a Liviu Stoica,
+<a href="mailto:support@regiamic.com">support@regiamic.com</a>. Se l'informativa cambia, la nuova versione
+compare su questa pagina con una nuova data.</p>
+</section>
+
+</main>
+</body>
+</html>
