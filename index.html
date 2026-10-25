@@ -22,6 +22,17 @@
   main { padding-top: 1.5rem; padding-bottom: 3rem; }
   h2 { font-size: 1.2rem; margin: 2rem 0 .4rem; }
   a { color: var(--accent); }
+  .play { display: inline-block; margin: .5rem 0 0; }
+  .play img { height: 60px; display: block; margin-left: -10px; }
+  form { display: grid; gap: .8rem; margin-top: .6rem; max-width: 26rem; }
+  fieldset { border: 0; padding: 0; margin: 0; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  legend { padding: 0; margin-bottom: .3rem; }
+  label.opt { display: flex; align-items: center; gap: .4rem; cursor: pointer; }
+  input[type=email] { font: inherit; color: var(--text); background: var(--bg); padding: .5rem .7rem;
+         border: 1px solid var(--muted); border-radius: 8px; width: 100%; box-sizing: border-box; }
+  button { font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0;
+         border-radius: 8px; padding: .6rem 1rem; cursor: pointer; justify-self: start; }
+  .note { color: var(--muted); font-size: .9rem; margin: 0; }
   footer { color: var(--muted); font-size: .9rem; padding-bottom: 3rem; }
   @media (max-width: 480px) { h1 { font-size: 1.9rem; } header img { width: 64px; height: 64px; border-radius: 15px; } }
 </style>
@@ -45,6 +56,43 @@
   <p lang="it">Regia Mic trasforma i telefoni in microfoni senza fili per un computer, per
   riunioni, dirette, aule ed eventi. Le voci arrivano su un microfono che qualsiasi programma può
   scegliere, e l'audio del computer torna ai telefoni. Tutto resta nella rete locale, cifrato.</p>
+
+  <h2>Get the app · Scarica l'app</h2>
+  <a class="play" href="https://play.google.com/store/apps/details?id=com.regiamic.app">
+    <img alt="Get it on Google Play"
+         src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+  </a>
+
+  <h2>Request the receiver · Richiedi il ricevitore</h2>
+  <p>The phones talk to a receiver on the computer. Tell us which computer you use and we will
+  send you the receiver. <span lang="it">I telefoni parlano con un ricevitore sul computer. Dicci
+  quale computer usi e ti invieremo il ricevitore.</span></p>
+  <form id="request" action="mailto:support@regiamic.com" method="post">
+    <fieldset>
+      <legend>Computer</legend>
+      <label class="opt"><input type="radio" name="platform" value="Windows" required> Windows</label>
+      <label class="opt"><input type="radio" name="platform" value="Mac"> Mac</label>
+    </fieldset>
+    <label>Email
+      <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+    </label>
+    <button type="submit">Request · Richiedi</button>
+    <p class="note" id="request-note" hidden></p>
+  </form>
+  <script>
+    document.getElementById('request').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target, platform = f.platform.value, email = f.email.value;
+      var subject = 'Receiver request: ' + platform;
+      var body = 'Please send me the Regia Mic receiver for ' + platform + '.\n\nEmail: ' + email;
+      location.href = 'mailto:support@regiamic.com?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      var note = document.getElementById('request-note');
+      note.textContent = 'Your email app should open with the request ready to send. · ' +
+        'Si aprirà la tua app di posta con la richiesta pronta da inviare.';
+      note.hidden = false;
+    });
+  </script>
 
   <h2>Contact · Contatti</h2>
   <p><a href="mailto:support@regiamic.com">support@regiamic.com</a></p>
